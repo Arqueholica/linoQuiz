@@ -77,7 +77,7 @@ function showQuestion() {
 
 submitButton.onclick = function() {
     if (selectedOption === null) {
-        resultElement.textContent = "Por favor selecciona una opción.";
+        resultElement.textContent = "Por favor, selecciona una opción.";
         resultElement.className = "mt-4 text-red-500 font-semibold";
         return;
     }
