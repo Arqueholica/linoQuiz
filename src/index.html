@@ -4,22 +4,20 @@
     <title>Mini Quiz</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
-    <link rel="icon" href="public\icons\logo2_color_fondoClaro (1).png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+    <link rel="icon" href="public/icons/logo2_color_fondoClaro (1).png">
 </head>
 <body>
 
 <header>
-<h1 class="text-4xl font-bold text-center m-2 p-8 border-b-2 border-amber-950 shadow-lg bg-teal-200">¡Bienvenidxs a LinoQuiz!</h1>
+  
+<h1 class="text-4xl font-bold text-center m-2 p-8 border-b-2 shadow-lg bg-blue-100">¡Bienvenidxs a LinoQuiz!</h1>
 </header>
-
 <main>
-    <div id="quiz" class="grid place-items-center">
+    <div id="quiz" class="grid place-items-center bg-gray-200">
       <div class="w-full max-w-xl p-8 bg-white rounded-lg flex flex-col items-center">
-        <p class="mb-6 text-center font-bold text-xl border-2 p-2 ">¿Cuánto sabes de Julio Verne?</p>
-        <h3 id="question" class="text-xl font-bold mb-4 text-center"></h3>
+        <p class="mb-6 text-center font-bold text-3xl py-6">¿Cuánto sabes de Julio Verne?</p>
+        <h3 id="question" class="text-xl font-bold my-6 text-center"></h3>
         <div id="options" class="mb-6 w-full flex flex-col items-center"></div>
         <button id="submit" class="p-2 m-4 text-lg font-semibold text-center border-2 rounded-lg hover:bg-blue-200">Responder</button>
         <div id="result" class="mt-4 text-lg font-semibold text-center"></div>
