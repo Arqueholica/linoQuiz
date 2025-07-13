@@ -11,33 +11,16 @@
 </header>
 
 <main>
-    <div class="quiz-container">
-    <div>
-    <p>¡Bienvenidxs a LinoQuiz! <br>
-        ¿Cuánto sabes de Julio Verne?</p>
+
+    <div id="quiz" class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4 text-center">¡Bienvenidxs a LinoQuiz!</h2>
+      <p class="mb-6 text-center">¿Cuánto sabes de Julio Verne?</p>
+      <h3 id="question" class="text-xl font-bold mb-4"></h3>
+      <div id="options" class="mb-6"></div>
+      <button id="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Responder</button>
+      <div id="result" class="mt-4 text-lg font-semibold"></div>
     </div>
 
-<section class="question">
-    <h2>Preguntas</h2>
-    </section>
-
-<section class="answers">
-    <h2>Respuestas</h2>
-    </section>
-
-<section class="submit">
-    <button class="submit-button">Verificar</button>
-</section>
-
-<section class="results">
-    <h2>Resultados</h2> 
-    <p>Has obtenido: <span class="score">0</span> de un total de <span class="total">0</span> puntos.</p>
-   
-    <button class="restart">Reiniciar</button>
-</section>
-    </div>
-
-             
 </main>
 
 <script src="./script.js"></script>
