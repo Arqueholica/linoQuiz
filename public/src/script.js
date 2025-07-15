@@ -14,53 +14,8 @@ let score = 0;
 let selectedOption = null;
 
 
-// Datos del quiz
-const quizData = [
-    {
-        level: "1",
-        question: "¿Cuál de estos libros no fue escrito por Julio Verne?",
-        options: [
-            {text: "La casa de Vapor", correct: false},
-            {text: "El hombre invisible", correct: true},
-            {text: "El faro del fin del mundo", correct: false},
-        ],
-    },
-    {
-        question: "¿Dónde nació Julio Verne?",
-        options: [
-            {text: "Bélgica", correct: false},
-            {text: "Reino Unido", correct: false},
-            {text: "Francia", correct: true},
-        ],
-    },
-    {
-        level: "1",
-        question: "¿Cuál de estos personajes protagoniza su libro 'De la Tierra a la Luna'?",
-        options: [
-            {text: "Impey Barbicane", correct: true},
-            {text: "El capitán Nemo", correct: false},
-            {text: "El capitán Hatteras", correct: false},
-        ],
-    },
-    {
-        level: "1",
-        question: "¿Cuántas leguas recorre el submarino Nautilus en la novela de Verne?",
-        options: [
-            {text: "30.000 leguas", correct: false},
-            {text: "10.000 leguas", correct: false},
-            {text: "20.000 leguas", correct: true},
-        ],
-    },
-    {
-        level: "1",
-        question: "¿Cuál de estos libros fue escrito por Julio Verne?",
-        options: [
-            {text: "Los viajes de Gulliver", correct: false},
-            {text: "La estrella del Sur", correct: true},
-            {text: "La isla del tesoro", correct: false},
-        ],
-    }
-];
+
+let quizData = [];
     
 function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
@@ -133,17 +88,33 @@ function showResult() {
 // Al inicio, ocultar el quiz
 quizContainer.classList.add('hidden');
 
-// Mostrar la pantalla de bienvenida y solo mostrar el quiz al presionar el botón 'Comenzar Quiz'
 
+// Función para cargar preguntas por nivel
+function cargarNivel(nivel) {
+    let script;
+    if (nivel === 1) script = 'preguntasNivel1.js';
+    else if (nivel === 2) script = 'preguntasNivel2.js';
+    else if (nivel === 3) script = 'preguntasNivel3.js';
+    if (script) {
+        const s = document.createElement('script');
+        s.src = script;
+        s.onload = function() {
+            quizData = window['preguntasNivel' + nivel];
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedOption = null;
+            const welcomeDiv = document.getElementById('welcomeElements');
+            if (welcomeDiv) welcomeDiv.style.display = 'none';
+            quizContainer.classList.remove('hidden');
+            showQuestion();
+        };
+        document.body.appendChild(s);
+    }
+}
 
-startButton.onclick = function() {
-    // Oculta el contenedor de bienvenida
-    const welcomeDiv = document.getElementById('welcomeElements');
-    if (welcomeDiv) welcomeDiv.style.display = 'none';
-    // Muestra el quiz
-    quizContainer.classList.remove('hidden');
-    showQuestion();
-};
+document.getElementById('nivel1').onclick = function() { cargarNivel(1); };
+document.getElementById('nivel2').onclick = function() { cargarNivel(2); };
+document.getElementById('nivel3').onclick = function() { cargarNivel(3); };
 
 resetButton.onclick = function() {
     currentQuestionIndex = 0;
