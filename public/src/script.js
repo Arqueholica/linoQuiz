@@ -1,23 +1,19 @@
-const quizContainer = document.getElementById('quiz');
-const questionElement = document.getElementById('question');    
-const optionsContainer = document.getElementById('options');
-const submitButton = document.getElementById('submit');
-const resultElement = document.getElementById('result');
+document.addEventListener('DOMContentLoaded', function() {
+  const quizContainer = document.getElementById('quiz');
+  const questionElement = document.getElementById('question');    
+  const optionsContainer = document.getElementById('options');
+  const submitButton = document.getElementById('submit');
+  const resultElement = document.getElementById('result');
 
-const resetButton = document.getElementById('reset');
-const startButton = document.getElementById('start');
-const backButton = document.getElementById('back');
+  const resetButton = document.getElementById('reset');
+  const backButton = document.getElementById('back');
 
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let selectedOption = null;
+  let quizData = [];
 
-let currentQuestionIndex = 0;
-let score = 0;
-let selectedOption = null;
-
-
-
-let quizData = [];
-    
-function showQuestion() {
+  function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
     optionsContainer.innerHTML = '';
@@ -61,10 +57,10 @@ submitButton.onclick = function() {
     if (correct) {
         score++;
         resultElement.textContent = "¡Correcto!";
-        resultElement.className = "mt-4 text-green-500 font-semibold";
+        resultElement.className = "mt-4 text-green-500 font-bold";
     } else {
         resultElement.textContent = "Incorrecto.";
-        resultElement.className = "mt-4 text-red-500 font-semibold";
+        resultElement.className = "mt-4 text-red-500 font-bold";
     }
     setTimeout(() => {
         currentQuestionIndex++;
@@ -92,9 +88,9 @@ quizContainer.classList.add('hidden');
 // Función para cargar preguntas por nivel
 function cargarNivel(nivel) {
     let script;
-    if (nivel === 1) script = 'preguntasNivel1.js';
-    else if (nivel === 2) script = 'preguntasNivel2.js';
-    else if (nivel === 3) script = 'preguntasNivel3.js';
+    if (nivel === 1) script = 'src/preguntasNivel1.js';
+    else if (nivel === 2) script = 'src/preguntasNivel2.js';
+    else if (nivel === 3) script = 'src/preguntasNivel3.js';
     if (script) {
         const s = document.createElement('script');
         s.src = script;
@@ -123,7 +119,9 @@ resetButton.onclick = function() {
     submitButton.style.display = 'block';
     showQuestion();
     resultElement.textContent = '';
-}
+};
+// Cierre del bloque DOMContentLoaded
+});
 
 
 
