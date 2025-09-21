@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.paper-btn {
+  background: #fdf6e3;
+  border: 2px solid #e0c097;
+  border-radius: 18px 32px 18px 32px/32px 18px 32px 18px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.10), 0 1px 0 #fff inset;
+  font-family: 'Caveat', cursive;
+  color: #5b4636;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.25rem;
+  font-weight: 700;
+  outline: none;
+}
+.paper-btn:hover {
+  box-shadow: 4px 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-2px) scale(1.03) rotate(-1deg);
+  background: #f7ecd7;
+}
+
+.books-bg{
+    background-image: "public/src/icons/FondoQuiz.jpg";
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

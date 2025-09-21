@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     currentQuestion.options.forEach((option, idx) => {
         const optionBtn = document.createElement('button');
         optionBtn.textContent = option.text;
-        optionBtn.className = "block w-full text-left px-4 py-2 mb-2 border rounded cursor-pointer hover:bg-yellow-400";
+        optionBtn.className = "paper-btn w-full text-left mb-2";
         optionBtn.onclick = () => {
             Array.from(optionsContainer.children).forEach(btn => {
                 btn.classList.remove('bg-yellow-200');
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   quizContainer.classList.add('hidden');
 
-  function cargarNivel(nivel) {
+function cargarNivel(nivel) {
     let script;
     if (nivel === 1) script = linoquiz_plugin_url + 'assets/js/preguntasNivel1.js';
     else if (nivel === 2) script = linoquiz_plugin_url + 'assets/js/preguntasNivel2.js';
@@ -99,18 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         document.body.appendChild(s);
     }
-  }
+}
 
-  document.getElementById('nivel1').onclick = function() { cargarNivel(1); };
-  document.getElementById('nivel2').onclick = function() { cargarNivel(2); };
-  document.getElementById('nivel3').onclick = function() { cargarNivel(3); };
+        document.getElementById('nivel1').className += ' paper-btn';
+        document.getElementById('nivel2').className += ' paper-btn';
+        document.getElementById('nivel3').className += ' paper-btn';
+        document.getElementById('nivel1').onclick = function() { cargarNivel(1); };
+        document.getElementById('nivel2').onclick = function() { cargarNivel(2); };
+        document.getElementById('nivel3').onclick = function() { cargarNivel(3); };
 
-  resetButton.onclick = function() {
-    currentQuestionIndex = 0;
-    score = 0;
-    selectedOption = null;
-    submitButton.style.display = 'block';
-    showQuestion();
-    resultElement.textContent = '';
-  };
+    resetButton.className += ' paper-btn';
+    backButton.className += ' paper-btn';
+    submitButton.className += ' paper-btn';
+    resetButton.onclick = function() {
+        currentQuestionIndex = 0;
+        score = 0;
+        selectedOption = null;
+        submitButton.style.display = 'block';
+        showQuestion();
+        resultElement.textContent = '';
+    };
 });

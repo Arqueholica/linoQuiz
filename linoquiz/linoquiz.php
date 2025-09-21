@@ -39,8 +39,8 @@ add_action( 'wp_enqueue_scripts', 'linoquiz_enqueue_assets' );
 // Shortcode
 function linoquiz_shortcode() {
     ob_start();
-    ?>
-    <div class="bg-gray-200 min-h-screen w-full px-2 py-4 flex flex-col items-center">
+  ?>
+  <div id="books-bg" class="min-h-screen w-full px-2 py-4 flex flex-col items-center" style="position:relative; overflow:hidden;">
       <div id="welcomeElements" class="w-full flex flex-col items-center">
         <h1 class="text-4xl font-bold text-center w-full max-w-md mx-auto my-2 py-8 px-4 md:px-10 border-2 rounded-lg shadow-lg bg-blue-100">¡Bienvenidxs a LinoQuiz!</h1>
         <div class="w-full max-w-md mx-auto px-4 md:px-10 py-4 md:py-8 bg-white flex flex-col items-center">
@@ -72,7 +72,23 @@ function linoquiz_shortcode() {
       </div>
     </div>
     <link rel="icon" href="<?php echo plugins_url('assets/icons/logo2_color_fondoClaro (1).png', __FILE__); ?>" type="image/png" />
+    <style>
+      #quiz-bg::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 0;
+        background-image: url('<?php echo plugins_url('assets/img/FondoQuiz.png', __FILE__); ?>');
+        background-size: cover;
+        background-position: center;
+        filter: blur(12px) brightness(0.7);
+        opacity: 0.5;
+      }
+      #quiz-bg > * { position: relative; z-index: 1; }
+    </style>
     <?php
     return ob_get_clean();
 }
+
 add_shortcode( 'linoquiz', 'linoquiz_shortcode' );
+
