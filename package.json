@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "postcss public/src/input.css -o public/src/output.css && cp public/src/*.js public/src/",
+  "build": "npx postcss public/src/input.css -o public/src/output.css",
     "vercel-build": "npm run build"
   },
   "dependencies": {
