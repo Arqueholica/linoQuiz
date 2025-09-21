@@ -52,9 +52,9 @@ function linoquiz_shortcode() {
         </div>
         <p class="text-center text-lg font-semibold m-2 p-4 w-full max-w-md mx-auto">Selecciona un nivel para comenzar:</p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 mt-4 w-full max-w-md mx-auto">
-          <button id="nivel1" class="w-full sm:w-auto py-2 px-4 text-lg font-semibold text-center border-2 border-gray-700 rounded-lg hover:bg-blue-200">Nivel 1</button>
-          <button id="nivel2" class="w-full sm:w-auto py-2 px-4 text-lg font-semibold text-center border-2 border-gray-700 rounded-lg hover:bg-green-200">Nivel 2</button>
-          <button id="nivel3" class="w-full sm:w-auto py-2 px-4 text-lg font-semibold text-center border-2 border-gray-700 rounded-lg hover:bg-yellow-200">Nivel 3</button>
+          <button id="nivel1" class="paper-btn">Nivel 1</button>
+          <button id="nivel2" class="paper-btn">Nivel 2</button>
+          <button id="nivel3" class="paper-btn">Nivel 3</button>
         </div>
       </div>
       <div id="quiz" class="flex flex-col justify-center items-center min-h-screen hidden w-full">
@@ -62,11 +62,11 @@ function linoquiz_shortcode() {
           <p class="mb-6 text-center font-bold text-3xl py-6">¿Cuánto sabes de Julio Verne?</p>
           <h3 id="question" class="text-xl font-bold my-6 text-center"></h3>
           <div id="options" class="mb-6 w-full flex flex-col items-center"></div>
-          <button id="submit" class="w-full py-2 m-4 text-lg font-semibold text-center border-2 rounded-lg hover:bg-blue-200">Responder</button>
+          <button id="submit" class="paper-btn">Responder</button>
           <div id="result" class="mt-4 text-lg font-semibold text-center"></div>
           <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full">
-            <div id="reset" class="w-full sm:w-auto p-2 text-lg font-semibold text-center border-2 rounded-lg hover:bg-blue-200 cursor-pointer">Reiniciar</div>
-            <div id="back" class="w-full sm:w-auto p-2 text-lg font-semibold text-center border-2 rounded-lg hover:bg-red-200 cursor-pointer">Atrás</div>
+            <div id="reset" class="paper-btn">Reiniciar</div>
+            <div id="back" class="paper-btn">Atrás</div>
           </div>
         </div>
       </div>
