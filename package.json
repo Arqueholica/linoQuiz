@@ -1,8 +1,9 @@
 {
   "scripts": {
     "build": "postcss public/src/input.css -o public/src/output.css",
-    "build": "postcss src/input.css -o public/src/output.css && cp -R public/icons assets/ && cp src/*.js assets/js/"
-      },
+    "build": "postcss src/input.css -o public/src/output.css && cp -R public/icons assets/ && cp src/*.js assets/js/",
+
+    "vercel-build": "npm ci && npm run build"},
   "devDependencies": {
     "autoprefixer": "^10.0.0",
     "postcss": "^8.0.0",
