@@ -23,11 +23,11 @@
 }
 
 
-.books-bg{
-    background-image: "public/src/img/FondoQuiz.jpg";
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.books-bg {
+	background-image: url('../img/FondoQuiz.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 /* Puedes añadir aquí estilos personalizados para tu quiz si lo deseas */

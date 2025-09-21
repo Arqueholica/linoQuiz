@@ -22,9 +22,9 @@
   background: #f7ecd7;
 }
 
-.books-bg{
-    background-image: "public/src/icons/FondoQuiz.jpg";
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.books-bg {
+  background-image: url('./FondoQuiz.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
