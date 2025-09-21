@@ -3,7 +3,7 @@
     "build": "postcss public/src/input.css -o public/src/output.css && cp public/src/*.js public/src/",
     "vercel-build": "npm run build"
   },
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^10.0.0",
     "postcss": "^8.0.0",
     "postcss-cli": "^11.0.1",
