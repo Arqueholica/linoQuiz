@@ -1,6 +1,6 @@
 {
   "scripts": {
-  "build": "npx postcss public/src/input.css -o public/src/output.css",
+  "build": "npx tailwindcss -i public/src/input.css -o public/src/output.css --minify",
     "vercel-build": "npm run build"
   },
   "dependencies": {
